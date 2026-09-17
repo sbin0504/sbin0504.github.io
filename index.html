@@ -10,358 +10,177 @@
 </head>
 <body>
 
-<div class="layout">
-
-  <!-- ===== Sidebar ===== -->
-  <aside class="sidebar">
-    <div class="sidebar-top">
-      <p class="eyebrow">PORTFOLIO</p>
-      <h1><a href="#top">박수빈<br>Subeen</a></h1>
-      <p class="role">마케팅 기획 · 콘텐츠 제작<br>이커머스 운영</p>
-    </div>
-
-    <nav class="side-nav" id="side-nav">
-      <a href="#about" data-nav>소개</a>
-      <a href="#education" data-nav>학력</a>
-      <a href="#skills" data-nav>역량</a>
-      <a href="#experience" data-nav>경험</a>
-      <a href="#awards" data-nav>수상</a>
-      <a href="#media" data-nav>미디어</a>
-      <a href="#contact" data-nav>연락처</a>
-    </nav>
-
-    <div class="sidebar-bottom">
-      <div class="social-row">
-        <a href="mailto:sbin040504@naver.com" title="Email" aria-label="Email">✉</a>
-        <a href="tel:010-4062-3877" title="Call" aria-label="Call">☎</a>
-        <a href="https://github.com/sbin0504" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">⌥</a>
-        <a href="https://blog.naver.com/smile_sb_04" target="_blank" rel="noopener" title="Blog" aria-label="Blog">✎</a>
-      </div>
-    </div>
-  </aside>
-
-  <!-- ===== Mobile top bar ===== -->
-  <header class="mobile-bar">
-    <a href="#top" class="mobile-brand">박수빈</a>
-    <button class="mobile-toggle" id="mobile-toggle" aria-label="메뉴 열기">
+<header class="navbar">
+  <a href="index.html" class="nav-logo">박수빈 <small>SUBEEN</small></a>
+  <nav class="nav-links">
+    <a href="index.html" class="active">소개</a>
+    <a href="projects.html">프로젝트</a>
+    <a href="awards.html">수상</a>
+    <a href="contact.html">연락처</a>
+  </nav>
+  <div class="nav-actions">
+    <a href="mailto:sbin040504@naver.com" class="nav-cta">이메일 보내기</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="메뉴 열기">
       <span></span><span></span><span></span>
     </button>
-  </header>
-  <nav class="mobile-menu" id="mobile-menu">
-    <a href="#about">소개</a>
-    <a href="#education">학력</a>
-    <a href="#skills">역량</a>
-    <a href="#experience">경험</a>
-    <a href="#awards">수상</a>
-    <a href="#media">미디어</a>
-    <a href="#contact">연락처</a>
-  </nav>
+  </div>
+</header>
+<nav class="mobile-drop" id="mobile-drop">
+  <a href="index.html" class="active">소개</a>
+  <a href="projects.html">프로젝트</a>
+  <a href="awards.html">수상</a>
+  <a href="contact.html">연락처</a>
+</nav>
 
-  <!-- ===== Main content ===== -->
-  <main id="top">
+<main class="page">
 
-    <section class="intro reveal">
-      <p class="kicker">Hello, I'm</p>
-      <h2 class="intro-title">아이디어를 기획하고, <span>콘텐츠</span>로 실행하고,<br>성과로 증명하는 사람입니다.</h2>
-      <p class="intro-desc">
-        한국외국어대학교 융합인재학부 · 2027.02 졸업예정. 공모전과 팀 프로젝트에서 아이디어를 구체적인 실행 계획으로
-        발전시켜 여러 차례 수상했고, 이커머스 운영 경험을 통해 고객의 시선에서 콘텐츠를 기획하는 감각을 키웠습니다.
-      </p>
-      <div class="intro-links">
-        <a href="mailto:sbin040504@naver.com" class="btn btn-primary">이메일 보내기</a>
-        <a href="#experience" class="btn btn-ghost">경험 보러가기 ↓</a>
-      </div>
-    </section>
+  <section class="intro reveal">
+    <p class="kicker">Hello, I'm</p>
+    <h1 class="intro-title">아이디어를 기획하고, <span>콘텐츠</span>로 실행하고,<br>성과로 증명하는 사람입니다.</h1>
+    <p class="intro-desc">
+      한국외국어대학교 융합인재학부 · 2027.02 졸업예정. 공모전과 팀 프로젝트에서 아이디어를 구체적인 실행 계획으로
+      발전시켜 여러 차례 수상했고, 이커머스 운영 경험을 통해 고객의 시선에서 콘텐츠를 기획하는 감각을 키웠습니다.
+    </p>
+    <div class="intro-links">
+      <a href="projects.html" class="btn btn-primary">프로젝트 보러가기 →</a>
+      <a href="mailto:sbin040504@naver.com" class="btn btn-ghost">이메일 보내기</a>
+    </div>
+  </section>
 
-    <section id="about" class="block reveal">
-      <div class="block-head">
-        <span class="idx">01</span>
-        <h3>소개</h3>
-      </div>
-      <div class="about-layout">
-        <dl class="info-list">
-          <div><dt>이름</dt><dd>박수빈 (2004.05.04)</dd></div>
-          <div><dt>이메일</dt><dd>sbin040504@naver.com</dd></div>
-          <div><dt>연락처</dt><dd>010-4062-3877</dd></div>
-          <div><dt>주소</dt><dd>경상남도 창원시 의창구 중동로</dd></div>
-          <div><dt>학력</dt><dd>한국외국어대학교 융합인재학부<br>2023.03 ~ 2027.02 (졸업예정)</dd></div>
-        </dl>
-        <div class="about-quote">
-          <p>“기획부터 콘텐츠 제작, 실행까지<br>끝까지 책임지는 것을 좋아합니다.”</p>
-          <span class="quote-mark">”</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="education" class="block reveal">
-      <div class="block-head">
-        <span class="idx">02</span>
-        <h3>학력</h3>
-      </div>
-      <ul class="timeline">
-        <li>
-          <span class="tl-dot"></span>
-          <div class="tl-date">2023.03 – 2027.02</div>
-          <div class="tl-body">
-            <h4>한국외국어대학교 (용인)</h4>
-            <p>융합인재학부 · 졸업예정 · 4-1학기 기준 학점 3.50</p>
-          </div>
-        </li>
-        <li>
-          <span class="tl-dot"></span>
-          <div class="tl-date">2020.03 – 2023.02</div>
-          <div class="tl-body">
-            <h4>경남외국어고등학교</h4>
-            <p>졸업</p>
-          </div>
-        </li>
-        <li>
-          <span class="tl-dot"></span>
-          <div class="tl-date">2017.03 – 2020.02</div>
-          <div class="tl-body">
-            <h4>양덕여자중학교</h4>
-            <p>졸업</p>
-          </div>
-        </li>
-      </ul>
-    </section>
-
-    <section id="skills" class="block reveal">
-      <div class="block-head">
-        <span class="idx">03</span>
-        <h3>핵심 역량 &amp; 스킬</h3>
-      </div>
-
-      <div class="bento">
-        <div class="bento-item large">
-          <span class="bento-icon">💡</span>
-          <h4>기획력</h4>
-          <p>공모전 및 프로젝트에서 새로운 아이디어를 제안·발전시켜 4회 수상으로 이끈 경험</p>
-        </div>
-        <div class="bento-item">
-          <span class="bento-icon">🛒</span>
-          <h4>이커머스 운영</h4>
-          <p>네이버 스마트스토어 운영, 상품 강점 전달</p>
-        </div>
-        <div class="bento-item">
-          <span class="bento-icon">📋</span>
-          <h4>콘텐츠 기획</h4>
-          <p>고객 관점 니즈 분석 → 상세페이지 구성</p>
-        </div>
-        <div class="bento-item">
-          <span class="bento-icon">🎬</span>
-          <h4>콘텐츠 제작</h4>
-          <p>영상 · 이미지 · 블로그 제작 및 홍보</p>
-        </div>
-        <div class="bento-item">
-          <span class="bento-icon">🤖</span>
-          <h4>AI 활용</h4>
-          <p>AI 보정 · SEO 키워드 추출로 효율 개선</p>
-        </div>
-        <div class="bento-item">
-          <span class="bento-icon">🔎</span>
-          <h4>꼼꼼함</h4>
-          <p>이중 확인 습관화, 엑셀 기반 데이터 관리</p>
-        </div>
-      </div>
-
-      <div class="skill-rows">
-        <div class="skill-row">
-          <span class="skill-label">마케팅 &amp; 콘텐츠</span>
-          <div class="tags">
-            <span class="tag">마케팅 기획</span>
-            <span class="tag">프로모션 캠페인 기획</span>
-            <span class="tag">영상·이미지 콘텐츠 제작</span>
-            <span class="tag">상세페이지 제작</span>
-            <span class="tag">브랜드 개발</span>
-          </div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-label">툴 &amp; 역량</span>
-          <div class="tags">
-            <span class="tag tag-outline">컴퓨터활용능력 2급</span>
-            <span class="tag tag-outline">AI 툴 활용</span>
-            <span class="tag tag-outline">문제 해결</span>
-            <span class="tag tag-outline">적응력</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience" class="block reveal">
-      <div class="block-head">
-        <span class="idx">04</span>
-        <h3>경험 &amp; 활동</h3>
-      </div>
-
-      <article class="exp-feature">
-        <div class="exp-feature-top">
-          <span class="exp-tag">TEAM LEAD</span>
-          <span class="exp-date">2026</span>
-        </div>
-        <h4>BYOI 프로그램 — 용인 지역화폐(와이페이) 홍보 프로젝트</h4>
-        <p class="exp-desc">
-          용인시 거주 외국인 대상 지역화폐 '와이페이' 사용률을 높이기 위해 4명 팀을 구성해 팀장으로 이끌었으며,
-          인식조사 → 홍보 공모전 → 외부기관 매칭 프로그램으로 이어지는 실행형 프로젝트를 설계·운영했습니다.
-        </p>
-        <div class="exp-two-col">
-          <div>
-            <h5>팀장으로서 한 일</h5>
-            <ul>
-              <li>프로젝트 전체 일정 및 트랙(설문·공모전·매칭) 총괄</li>
-              <li>매 회의 회의록 작성 → 팀원 간 진행 상황 공유</li>
-              <li>활동비 집행내역서 작성 → 지출 내역 투명히 관리</li>
-              <li>외부 기관(용인시외국인복지센터, 농업기술센터, 더열방교회) 협조 요청 및 소통 담당</li>
-            </ul>
-          </div>
-          <div>
-            <h5>주요 활동</h5>
-            <ul>
-              <li>외국인 대상 와이페이 인식도 설문조사 설계·분석</li>
-              <li>교내 대상 홍보 카드뉴스 공모전 기획·운영 (국문·외국어 2부작 동시 제출, 교내 전 건물 포스터 부착)</li>
-              <li>외부기관과 외국인 근로자 매칭 프로그램 운영 (더열방교회 현장 1:1 사용법 안내)</li>
-            </ul>
-          </div>
-        </div>
-        <div class="exp-outcome">
-          <span class="badge-gold">🏆 2026-1 BYOI 최우수상 (2026.06.29)</span>
-          <span class="outcome-note">진단부터 실사용까지 연결된 실행력을 인정받음</span>
-        </div>
-      </article>
-
-      <article class="exp-row">
-        <div class="exp-row-head">
-          <h4>네이버 스마트스토어 운영</h4>
-          <span class="exp-date">이커머스 팀 프로젝트</span>
-        </div>
-        <p class="exp-desc">
-          팀으로 네이버 스마트스토어를 운영하며 상품 등록부터 상세페이지 제작, 프로모션 기획까지 함께 진행했고,
-          그 중 재무 관리를 포함한 디자인, 콘텐츠 제작을 담당했습니다.
-        </p>
-        <ul class="exp-list">
-          <li>엑셀 기반 주문·매출·정산 데이터 관리</li>
-          <li>발주 및 지출 내역 관리</li>
-          <li>고객 니즈와 상품 특성을 분석해 상세페이지 및 프로모션 콘텐츠 제작</li>
-          <li>AI 툴로 제품 이미지 보정 및 SEO 키워드 추출 → 콘텐츠 제작·홍보 효율 향상</li>
-          <li>활동 전체를 정리한 영상 제작</li>
-        </ul>
-        <div class="exp-outcome">
-          <span class="badge">🔍 네이버 SEO 달성</span>
-          <span class="badge">🥈 제5회 HUFS C.C.S 공모전 은상</span>
-        </div>
-        <a href="https://www.youtube.com/watch?v=8pJIIQa_4Zo" target="_blank" rel="noopener" class="inline-link">▶ 공모전 영상 보러가기</a>
-      </article>
-
-      <div class="exp-compact-grid">
-        <article class="exp-mini">
-          <span class="exp-date">2025.08 – 2025.11</span>
-          <h4>동행복권 대학생 서포터즈<br>'행복지음 5기'</h4>
-          <ul class="exp-list">
-            <li>복권 건전문화 캠페인 거리 홍보</li>
-            <li>불법 도박 사이트 신고 블로그 제작</li>
-            <li>도박 위험성 알리는 다큐멘터리 영상 제작</li>
-          </ul>
-          <a href="https://blog.naver.com/smile_sb_04/223916507282" target="_blank" rel="noopener" class="inline-link">▶ 활동 영상 보러가기</a>
-        </article>
-
-        <article class="exp-mini">
-          <span class="exp-date">2025.05 – 2025.08</span>
-          <h4>경기도미래세대재단<br>SNS 서포터즈</h4>
-          <ul class="exp-list">
-            <li>사업·행사 현장 취재</li>
-            <li>경기도 청년의 날 취재 영상 제작</li>
-            <li>SNS 콘텐츠 호응 유도 및 모니터링</li>
-          </ul>
-        </article>
-
-        <article class="exp-mini">
-          <span class="exp-date">2025.01 – 2025.02</span>
-          <h4>영국 어학연수</h4>
-          <ul class="exp-list">
-            <li>영국 셰필드 대학교 어학연수</li>
-            <li>매일 4시간 이상 영어 토론 수업</li>
-            <li>영어 회화 · 다문화 이해도 향상</li>
-          </ul>
-        </article>
-
-        <article class="exp-mini">
-          <span class="exp-date">2024.08</span>
-          <h4>CAMPUS Asia 2024<br>Short-term Study Abroad</h4>
-          <ul class="exp-list">
-            <li>아시아 각국 학생들과 수업·문화 체험</li>
-            <li>중·일·대만 학생과 서울 문화 교류</li>
-            <li>영어로 소통</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section id="awards" class="block reveal">
-      <div class="block-head">
-        <span class="idx">05</span>
-        <h3>수상 &amp; 자격 &amp; 어학</h3>
-      </div>
-      <ul class="award-list">
-        <li><time>2026.06.29</time><span class="award-title">Bring Your Own Ideas(BYOI) 최우수상</span><span class="award-org">한국외국어대학교</span></li>
-        <li><time>2026.05.23</time><span class="award-title">OPIc Intermediate Mid2 (영어)</span><span class="award-org">ACTFL</span></li>
-        <li><time>2026.04.07</time><span class="award-title">Google Analytics</span><span class="award-org">Google</span></li>
-        <li><time>2026.03.03</time><span class="award-title">컴퓨터활용능력 2급</span><span class="award-org">대한상공회의소</span></li>
-        <li><time>2025.09.10</time><span class="award-title">제5회 HUFS C.C.S 혁신교과목지원사업 공모전 은상</span><span class="award-org">한국외국어대학교</span></li>
-        <li><time>2024.12.20</time><span class="award-title">제4회 HUFS C.C.S 혁신교과목지원사업 공모전 동상</span><span class="award-org">한국외국어대학교</span></li>
-        <li><time>2024.08.23</time><span class="award-title">2024 여름방학 HUFStudy 우수상</span><span class="award-org">한국외국어대학교</span></li>
-        <li><time>2022.08.08</time><span class="award-title">2종 보통 운전면허</span><span class="award-org">경찰청(운전면허시험관리단)</span></li>
-      </ul>
-    </section>
-
-    <section id="media" class="block reveal">
-      <div class="block-head">
-        <span class="idx">06</span>
-        <h3>영상 &amp; 미디어</h3>
-      </div>
-      <div class="media-layout">
-        <div class="media-video">
-          <div class="video-wrap">
-            <iframe
-              src="https://www.youtube.com/embed/8pJIIQa_4Zo"
-              title="HUFS C.C.S 혁신교과목지원사업 공모전 은상 수상작"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <h4>제5회 HUFS C.C.S. 혁신교과목 우수사례 공모전 은상 수상작</h4>
-          <p class="caption">영상 출처: 한국외국어대학교 교육혁신원 유튜브</p>
-        </div>
-        <a href="https://blog.naver.com/smile_sb_04/223916507282" target="_blank" rel="noopener" class="media-blog">
-          <span class="bento-icon">📝</span>
-          <h4>활동 기록 블로그</h4>
-          <p>동행복권 서포터즈 등 활동을 정리한 블로그 후기를 확인해보세요.</p>
-          <span class="inline-link">블로그에서 보기 ↗</span>
-        </a>
-      </div>
-    </section>
-
-    <section id="contact" class="block reveal contact-block">
-      <div class="block-head">
-        <span class="idx">07</span>
-        <h3>Contact</h3>
-      </div>
-      <p class="contact-lede">함께 만들 이야기가 있다면 언제든 연락 주세요.</p>
+  <section id="about" class="block reveal">
+    <div class="block-head">
+      <span class="idx">01</span>
+      <h3>소개</h3>
+    </div>
+    <div class="about-layout">
       <dl class="info-list">
-        <div><dt>이메일</dt><dd><a href="mailto:sbin040504@naver.com">sbin040504@naver.com</a></dd></div>
-        <div><dt>연락처</dt><dd><a href="tel:010-4062-3877">010-4062-3877</a></dd></div>
+        <div><dt>이름</dt><dd>박수빈 (2004.05.04)</dd></div>
+        <div><dt>이메일</dt><dd>sbin040504@naver.com</dd></div>
+        <div><dt>연락처</dt><dd>010-4062-3877</dd></div>
         <div><dt>주소</dt><dd>경상남도 창원시 의창구 중동로</dd></div>
-        <div><dt>GitHub</dt><dd><a href="https://github.com/sbin0504" target="_blank" rel="noopener">github.com/sbin0504</a></dd></div>
-        <div><dt>Blog</dt><dd><a href="https://blog.naver.com/smile_sb_04" target="_blank" rel="noopener">blog.naver.com/smile_sb_04</a></dd></div>
+        <div><dt>학력</dt><dd>한국외국어대학교 융합인재학부<br>2023.03 ~ 2027.02 (졸업예정)</dd></div>
       </dl>
-    </section>
+      <div class="about-quote">
+        <span class="quote-label">MOTTO</span>
+        <p>“기획부터 콘텐츠 제작, 실행까지<br>끝까지 책임지는 것을 좋아합니다.”</p>
+        <div class="quote-tags">
+          <span>기획</span>
+          <span>콘텐츠 제작</span>
+          <span>실행력</span>
+        </div>
+        <span class="quote-mark">”</span>
+      </div>
+    </div>
+  </section>
 
-    <footer class="site-footer">
-      <p>&copy; 2026 Subeen.</p>
-    </footer>
+  <section id="education" class="block reveal">
+    <div class="block-head">
+      <span class="idx">02</span>
+      <h3>학력</h3>
+    </div>
+    <ul class="timeline">
+      <li>
+        <span class="tl-dot"></span>
+        <div class="tl-date">2023.03 – 2027.02</div>
+        <div class="tl-body">
+          <h4>한국외국어대학교 (용인)</h4>
+          <p>융합인재학부 · 졸업예정 · 4-1학기 기준 학점 3.50</p>
+        </div>
+      </li>
+      <li>
+        <span class="tl-dot"></span>
+        <div class="tl-date">2020.03 – 2023.02</div>
+        <div class="tl-body">
+          <h4>경남외국어고등학교</h4>
+          <p>졸업</p>
+        </div>
+      </li>
+      <li>
+        <span class="tl-dot"></span>
+        <div class="tl-date">2017.03 – 2020.02</div>
+        <div class="tl-body">
+          <h4>양덕여자중학교</h4>
+          <p>졸업</p>
+        </div>
+      </li>
+    </ul>
+  </section>
 
-  </main>
-</div>
+  <section id="skills" class="block reveal">
+    <div class="block-head">
+      <span class="idx">03</span>
+      <h3>핵심 역량 &amp; 스킬</h3>
+    </div>
+
+    <div class="bento">
+      <div class="bento-item large">
+        <span class="bento-icon">💡</span>
+        <h4>기획력</h4>
+        <p>공모전 및 프로젝트에서 새로운 아이디어를 제안·발전시켜 4회 수상으로 이끈 경험</p>
+      </div>
+      <div class="bento-item">
+        <span class="bento-icon">🛒</span>
+        <h4>이커머스 운영</h4>
+        <p>네이버 스마트스토어 운영, 상품 강점 전달</p>
+      </div>
+      <div class="bento-item">
+        <span class="bento-icon">📋</span>
+        <h4>콘텐츠 기획</h4>
+        <p>고객 관점 니즈 분석 → 상세페이지 구성</p>
+      </div>
+      <div class="bento-item">
+        <span class="bento-icon">🎬</span>
+        <h4>콘텐츠 제작</h4>
+        <p>영상 · 이미지 · 블로그 제작 및 홍보</p>
+      </div>
+      <div class="bento-item">
+        <span class="bento-icon">🤖</span>
+        <h4>AI 활용</h4>
+        <p>AI 보정 · SEO 키워드 추출로 효율 개선</p>
+      </div>
+      <div class="bento-item">
+        <span class="bento-icon">🔎</span>
+        <h4>꼼꼼함</h4>
+        <p>이중 확인 습관화, 엑셀 기반 데이터 관리</p>
+      </div>
+    </div>
+
+    <div class="skill-rows">
+      <div class="skill-row">
+        <span class="skill-label">마케팅 &amp; 콘텐츠</span>
+        <div class="tags">
+          <span class="tag">마케팅 기획</span>
+          <span class="tag">프로모션 캠페인 기획</span>
+          <span class="tag">영상·이미지 콘텐츠 제작</span>
+          <span class="tag">상세페이지 제작</span>
+          <span class="tag">브랜드 개발</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">툴 &amp; 역량</span>
+        <div class="tags">
+          <span class="tag tag-outline">컴퓨터활용능력 2급</span>
+          <span class="tag tag-outline">AI 툴 활용</span>
+          <span class="tag tag-outline">문제 해결</span>
+          <span class="tag tag-outline">적응력</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>&copy; 2026 Subeen.</p>
+    <div class="footer-social">
+      <a href="mailto:sbin040504@naver.com" title="Email" aria-label="Email">✉</a>
+      <a href="tel:010-4062-3877" title="Call" aria-label="Call">☎</a>
+      <a href="https://github.com/sbin0504" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">⌥</a>
+      <a href="https://blog.naver.com/smile_sb_04" target="_blank" rel="noopener" title="Blog" aria-label="Blog">✎</a>
+    </div>
+  </div>
+</footer>
 
 <script src="js/app.js"></script>
 </body>
