@@ -56,6 +56,9 @@ ul { list-style: none; margin: 0; padding: 0; }
   display: flex;
   align-items: flex-start;
   min-height: 100vh;
+  max-width: 1600px;
+  margin: 0 auto;
+  box-shadow: 0 0 60px rgba(135, 133, 162, 0.12);
 }
 
 /* ===== Sidebar (desktop) ===== */
@@ -228,7 +231,12 @@ main {
   flex: 1;
   min-width: 0;
   padding: 90px 64px 60px;
-  max-width: 880px;
+}
+
+.intro-title,
+.intro-desc,
+.exp-desc {
+  max-width: 720px;
 }
 
 /* Intro */
