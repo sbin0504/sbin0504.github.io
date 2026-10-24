@@ -1589,3 +1589,18 @@ html.splash-lock, html.splash-lock body { overflow: hidden; }
   text-underline-offset: 6px;
   padding: 0 2px;
 }
+
+/* Bigger enter button on the intro */
+.splash-enter {
+  gap: 14px;
+  font-size: 1.15rem;
+  padding: 16px 30px;
+  bottom: 40px;
+  box-shadow: 0 10px 30px rgba(95, 93, 120, 0.18);
+}
+.splash-enter:hover { background: var(--white); }
+.splash-mouse { width: 22px; height: 34px; border-radius: 12px; }
+.splash-mouse::after { top: 6px; width: 4px; height: 8px; margin-left: -2px; }
+@media (max-width: 680px) {
+  .splash-enter { font-size: 1.02rem; padding: 15px 20px; bottom: 24px; }
+}
