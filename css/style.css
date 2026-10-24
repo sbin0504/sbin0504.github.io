@@ -1282,8 +1282,17 @@ ul { list-style: none; margin: 0; padding: 0; }
 @media (max-width: 680px) {
   .orbit { grid-template-columns: repeat(2, 1fr); }
   .orbit-card { width: 100%; height: 150px; }
-  .orbit.orbit-ready { height: 440px; }
   .oc-title { font-size: 0.82rem; }
+  /* Phones: smaller cards on a tall ring */
+  .orbit.orbit-ready { height: 640px; margin: 0 -12px; border-radius: 22px; }
+  .orbit-ready .orbit-card { width: 104px; height: 104px; padding: 9px; gap: 2px; border-radius: 14px; }
+  .orbit-ready .oc-emoji { font-size: 1.2rem; top: 8px; right: 9px; }
+  .orbit-ready .oc-title { font-size: 0.68rem; line-height: 1.3; }
+  .orbit-ready .oc-result, .orbit-ready .oc-date { display: none; }
+  .orbit-ready .orbit-card .cat { font-size: 0.56rem; padding: 1px 5px; }
+  .orbit-center strong { font-size: 2.6rem; }
+  .orbit-center span { font-size: 0.85rem; }
+  .orbit-center small { display: none; }
 }
 
 /* ================= SIDE TIMELINE ================= */
@@ -1658,7 +1667,7 @@ html.splash-lock, html.splash-lock body { overflow: hidden; }
   .bento::-webkit-scrollbar { display: none; }
   .bento-item,
   .bento-item.large {
-    flex: 0 0 58%;
+    flex: 0 0 calc((100vw - 58px) / 2); /* two cards per screen */
     min-height: 0;
     padding: 16px;
     scroll-snap-align: start;

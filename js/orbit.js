@@ -4,18 +4,11 @@
   if (!orbit) return;
   const cards = [...orbit.querySelectorAll('.orbit-card')];
   const count = orbit.querySelector('.orbit-center strong');
-  // On narrow screens the ring is too cramped to read, so keep the plain grid
-  const wide = window.matchMedia('(min-width: 681px)');
-  const setMode = () => {
-    orbit.classList.toggle('orbit-ready', wide.matches);
-    if (!wide.matches) cards.forEach((c) => { c.style.transform = ''; c.style.zIndex = ''; });
-  };
-  wide.addEventListener('change', setMode);
-  setMode();
+  orbit.classList.add('orbit-ready');
 
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const SPEED = reduced ? 0 : -0.12; // rad/s, counter-clockwise
-  const REACH = 230;                 // px within which cards react to the pointer
+  let REACH = 230;                   // px within which cards react to the pointer
   const GROW = 0.45;
 
   let base = 0;
@@ -42,7 +35,7 @@
     requestAnimationFrame(frame);
     const dt = Math.min(0.05, (now - last) / 1000);
     last = now;
-    if (!visible || !wide.matches) return;
+    if (!visible) return;
 
     const shown = cards.filter((c) => !c.hidden);
     if (count) count.textContent = shown.length;
@@ -50,6 +43,7 @@
 
     const w = orbit.clientWidth, h = orbit.clientHeight;
     const size = shown[0].offsetWidth;
+    REACH = Math.min(230, w * 0.45);
     const rx = w / 2 - size * 0.6;
     const ry = h / 2 - size * 0.6;
     // Slow down near the pointer, stop while a card is hovered
