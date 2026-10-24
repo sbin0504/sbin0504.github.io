@@ -1430,3 +1430,5 @@ ul { list-style: none; margin: 0; padding: 0; }
 .cat-campus { background: var(--offwhite); color: var(--violet-dark); border: 1px solid var(--violet); }
 .exp-awards-grid { margin-top: 18px; }
 #ccs4, #hufstudy { scroll-margin-top: 24px; }
+.proj-more-title { margin: 0; font-size: 0.85rem; color: var(--violet-dark); }
+.proj-more-title::before { content: "▸ "; color: var(--violet); }
