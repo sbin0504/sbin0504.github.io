@@ -4,8 +4,8 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
 const host = document.querySelector('.ball-pit');
 
 const LABELS = [
-  'ChatGPT', 'Figma', 'CapCut', 'Excel', 'GA', 'VLLO', 'AI', 'SEO',
-  '기획', '콘텐츠', '마케팅', 'Higgsfield', '영상', '브랜드', '이커머스', 'OPIc',
+  '기획', '리더십', '이커머스', '캠페인', '데이터', 'SEO', 'Excel', 'GA',
+  '콘텐츠', '마케팅', '브랜드', 'Figma', 'ChatGPT', 'AI', 'OPIc', '글로벌',
 ];
 
 // [ball color, text color]
