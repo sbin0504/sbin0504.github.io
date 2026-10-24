@@ -1604,3 +1604,17 @@ html.splash-lock, html.splash-lock body { overflow: hidden; }
 @media (max-width: 680px) {
   .splash-enter { font-size: 1.02rem; padding: 15px 20px; bottom: 24px; }
 }
+
+/* Enter button: bottom centre */
+.splash-enter {
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+@media (max-width: 1000px) {
+  .splash-title { bottom: 120px; }
+}
+@media (max-width: 680px) {
+  .splash-enter { left: 20px; right: 20px; transform: none; }
+}
