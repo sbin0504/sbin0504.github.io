@@ -24,3 +24,15 @@ const reveal = new IntersectionObserver(
   { threshold: 0.12 }
 );
 revealEls.forEach((el) => reveal.observe(el));
+
+// Project category filter
+const filterBtns = document.querySelectorAll('.filter-btn');
+filterBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const f = btn.dataset.filter;
+    filterBtns.forEach((b) => b.classList.toggle('active', b === btn));
+    document.querySelectorAll('.ov-card, .proj, #sheffield').forEach((el) => {
+      el.hidden = f !== 'all' && el.dataset.cat !== f;
+    });
+  });
+});
