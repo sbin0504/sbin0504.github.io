@@ -1769,3 +1769,8 @@ html.splash-lock, html.splash-lock body { overflow: hidden; }
 .contact-side { display: flex; flex-direction: column; gap: 24px; }
 .contact-side .about-quote { width: 100%; }
 @media (max-width: 900px) { .contact-side { grid-column: 1 / -1; } }
+
+/* Project image inside a detail card */
+.proj-figure { margin: 0 0 22px; max-width: 720px; }
+.proj-figure img { width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 28px rgba(95, 93, 120, 0.18); }
+.proj-figure figcaption { margin-top: 8px; font-size: 0.78rem; color: var(--violet); }
