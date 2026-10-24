@@ -1422,9 +1422,8 @@ ul { list-style: none; margin: 0; padding: 0; }
     width: min(320px, 86vw);
     transform: translateX(-100%);
     transition: transform 0.3s ease;
-    box-shadow: 12px 0 30px rgba(44, 42, 53, 0.15);
   }
-  .side-nav.open { transform: none; }
+  .side-nav.open { transform: none; box-shadow: 12px 0 30px rgba(44, 42, 53, 0.15); }
   .sn-toggle { display: block; }
 }
 .cat-campus { background: var(--offwhite); color: var(--violet-dark); border: 1px solid var(--violet); }
@@ -1474,4 +1473,119 @@ ul { list-style: none; margin: 0; padding: 0; }
 @media (max-width: 680px) {
   .about-layout { grid-template-columns: 1fr; }
   .profile-photo { max-width: 200px; }
+}
+
+/* ================= INTRO SPLASH ================= */
+.splash { display: none; }
+.splash.show {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow: hidden;
+  cursor: pointer;
+  background:
+    radial-gradient(ellipse at 50% 45%, #ffffff 0%, var(--pink-light) 55%, var(--pink) 120%);
+  transition: transform 0.9s cubic-bezier(0.7, 0, 0.2, 1), opacity 0.9s ease;
+}
+.splash.leaving { transform: translateY(-100%); opacity: 0.6; }
+html.splash-lock, html.splash-lock body { overflow: hidden; }
+
+.splash canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+.splash-top {
+  position: absolute;
+  top: 28px;
+  left: 40px;
+  right: 40px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--violet-dark);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.splash-title {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  z-index: 1;
+  pointer-events: none;
+}
+.splash-title p { margin: 0 0 8px; font-size: 0.85rem; font-weight: 700; color: var(--violet); }
+.splash-title h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  line-height: 1.1;
+  font-weight: 700;
+  color: var(--violet-dark);
+}
+.splash-title h1 span { color: var(--white); -webkit-text-stroke: 1.5px var(--violet-dark); }
+
+.splash-enter {
+  position: absolute;
+  right: 40px;
+  bottom: 44px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--violet-dark);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 10px 18px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+.splash-mouse {
+  position: relative;
+  width: 16px;
+  height: 24px;
+  border: 2px solid var(--violet-dark);
+  border-radius: 10px;
+}
+.splash-mouse::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 4px;
+  width: 3px;
+  height: 6px;
+  margin-left: -1.5px;
+  border-radius: 2px;
+  background: var(--violet-dark);
+  animation: splash-wheel 1.4s ease-in-out infinite;
+}
+@keyframes splash-wheel {
+  0% { transform: translateY(0); opacity: 1; }
+  70% { transform: translateY(8px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+@media (max-width: 680px) {
+  .splash-top { left: 20px; right: 20px; top: 20px; font-size: 0.68rem; }
+  .splash-title { left: 20px; bottom: 96px; }
+  .splash-enter { left: 20px; right: 20px; bottom: 24px; justify-content: center; }
+}
+
+/* Hero is text-only now that the balls live in the intro */
+.intro-grid { grid-template-columns: 1fr; }
+.intro-text { max-width: 760px; }
+
+/* Wavy highlight for key numbers */
+.hl-wave {
+  background: linear-gradient(transparent 60%, var(--pink) 60%);
+  color: var(--violet-dark);
+  font-weight: 700;
+  text-decoration: underline wavy var(--violet);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 6px;
+  padding: 0 2px;
 }

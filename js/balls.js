@@ -1,7 +1,7 @@
-// Hero 3D ball pit: rubber spheres labelled with tools & skills
+// Full-screen intro: rubber spheres labelled with tools & skills
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
 
-const host = document.querySelector('.ball-pit');
+const host = document.getElementById('splash');
 
 const LABELS = [
   '기획', '리더십', '이커머스', '캠페인', '데이터', 'SEO', 'Excel', 'GA',
@@ -17,14 +17,17 @@ const COLORS = [
   ['#FFE2E2', '#8785A2'],
 ];
 
-const COUNT = 40;
+const NARROW = window.innerWidth < 700;
+const COUNT = NARROW ? 30 : 56;
 const RADIUS = 1.75;
 const ATTRACTION = 0.006;
+const DRIFT = 0.004; // idle sway so the cluster keeps breathing
 const DAMPING = 0.9;
 const MAX_SPEED = 2;
 const MOUSE_RADIUS = 8;
 const MOUSE_FORCE = 0.12;
 const RESTITUTION = 0.6;
+let t = 0;
 const ITERS = 3;
 
 function labelTexture(text, bg, fg) {
@@ -68,8 +71,8 @@ function init() {
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-  // Size the pit and canvas here too, so a stale/missing stylesheet can't make them grow unbounded
-  Object.assign(host.style, { position: 'relative', aspectRatio: '1 / 1', overflow: 'hidden', width: '100%', maxWidth: '480px' });
+  // Pin the intro here too, so a stale/missing stylesheet can't let the canvas grow unbounded
+  Object.assign(host.style, { position: 'fixed', inset: '0', overflow: 'hidden' });
   Object.assign(renderer.domElement.style, {
     position: 'absolute', inset: '0', width: '100%', height: '100%', display: 'block',
   });
@@ -123,10 +126,14 @@ function init() {
     scene.add(mesh);
   }
 
+  let spreadX = 1;
   const resize = () => {
     const w = host.clientWidth, h = host.clientHeight;
     if (!w || !h) return;
     camera.aspect = w / h;
+    // Pull back on portrait screens so the cluster still fits the width
+    camera.position.z = Math.max(30, 22 / (0.828 * camera.aspect));
+    spreadX = camera.aspect > 1.2 ? Math.min(1.9, camera.aspect * 0.9) : 1;
     camera.updateProjectionMatrix();
     renderer.setSize(w, h, false);
   };
@@ -151,7 +158,11 @@ function init() {
   const rel = new THREE.Vector3();
   const step = () => {
     for (const b of bodies) {
-      b.vel.addScaledVector(tmp.copy(b.pos).negate(), ATTRACTION);
+      tmp.copy(b.pos).negate();
+      tmp.x /= spreadX; // wide screens: an oval cloud instead of a ball
+      b.vel.addScaledVector(tmp, ATTRACTION);
+      b.vel.x += Math.sin(t * 0.7 + b.wobble) * DRIFT;
+      b.vel.y += Math.cos(t * 0.5 + b.wobble * 1.3) * DRIFT;
       if (mouse.z !== AWAY.z) {
         const d = b.pos.distanceTo(mouse);
         if (d < MOUSE_RADIUS) {
@@ -190,14 +201,17 @@ function init() {
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduced) for (let i = 0; i < 400; i++) step();
 
-  let visible = true;
-  new IntersectionObserver((es) => { visible = es[0].isIntersecting; }).observe(host);
+  let running = true;
+  document.addEventListener('splash:closed', () => {
+    running = false;
+    renderer.dispose();
+  }, { once: true });
 
-  let last = performance.now(), acc = 0, t = 0;
+  let last = performance.now(), acc = 0;
   const DT = 1 / 60;
   const tick = (now) => {
+    if (!running) return;
     requestAnimationFrame(tick);
-    if (!visible) { last = now; return; }
     acc += Math.min(0.25, (now - last) / 1000);
     last = now;
     let n = 0;
@@ -214,4 +228,4 @@ function init() {
   requestAnimationFrame(tick);
 }
 
-if (host) init();
+if (host && host.classList.contains('show')) init();

@@ -62,3 +62,32 @@ if (side && sideToggle) {
     if (el) spy.observe(el);
   });
 }
+
+// Intro splash: leave on scroll / swipe / key / click; mouse movement only plays with the balls
+const splash = document.getElementById('splash');
+if (splash && splash.classList.contains('show')) {
+  let closing = false;
+  let touchY = null;
+  const close = () => {
+    if (closing) return;
+    closing = true;
+    window.scrollTo(0, 0);
+    splash.classList.add('leaving');
+    const done = () => {
+      splash.remove();
+      document.documentElement.classList.remove('splash-lock');
+      document.dispatchEvent(new Event('splash:closed'));
+    };
+    splash.addEventListener('transitionend', done, { once: true });
+    setTimeout(() => { if (splash.isConnected) done(); }, 1200);
+  };
+  window.addEventListener('wheel', (e) => { if (e.deltaY > 0) close(); }, { passive: true });
+  window.addEventListener('touchstart', (e) => { touchY = e.touches[0].clientY; }, { passive: true });
+  window.addEventListener('touchmove', (e) => {
+    if (touchY !== null && touchY - e.touches[0].clientY > 30) close();
+  }, { passive: true });
+  window.addEventListener('keydown', (e) => {
+    if ([' ', 'Enter', 'ArrowDown', 'PageDown'].includes(e.key)) { e.preventDefault(); close(); }
+  });
+  splash.addEventListener('click', close);
+}
