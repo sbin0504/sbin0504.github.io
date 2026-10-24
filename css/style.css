@@ -1284,12 +1284,15 @@ ul { list-style: none; margin: 0; padding: 0; }
   .orbit-card { width: 100%; height: 150px; }
   .oc-title { font-size: 0.82rem; }
   /* Phones: smaller cards on a tall ring */
-  .orbit.orbit-ready { height: 640px; margin: 0 -12px; border-radius: 22px; }
-  .orbit-ready .orbit-card { width: 104px; height: 104px; padding: 9px; gap: 2px; border-radius: 14px; }
+  .orbit.orbit-ready { height: auto; aspect-ratio: 1 / 1; margin: 0 -12px; border-radius: 22px; }
+  .orbit-ready .orbit-card { width: 112px; height: 112px; padding: 9px; gap: 2px; border-radius: 6px; box-shadow: 0 6px 18px rgba(95, 93, 120, 0.25); }
   .orbit-ready .oc-emoji { font-size: 1.2rem; top: 8px; right: 9px; }
   .orbit-ready .oc-title { font-size: 0.68rem; line-height: 1.3; }
   .orbit-ready .oc-result, .orbit-ready .oc-date { display: none; }
   .orbit-ready .orbit-card .cat { font-size: 0.56rem; padding: 1px 5px; }
+  .orbit-ready .oc-title { font-size: 0.7rem; }
+  .orbit-center strong { font-size: 2.2rem; }
+  .orbit-center span { margin-bottom: 0; }
   .orbit-center strong { font-size: 2.6rem; }
   .orbit-center span { font-size: 0.85rem; }
   .orbit-center small { display: none; }

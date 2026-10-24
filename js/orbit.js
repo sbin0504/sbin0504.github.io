@@ -44,8 +44,10 @@
     const w = orbit.clientWidth, h = orbit.clientHeight;
     const size = shown[0].offsetWidth;
     REACH = Math.min(230, w * 0.45);
-    const rx = w / 2 - size * 0.6;
-    const ry = h / 2 - size * 0.6;
+    // Phones: a true circle with overlapping cards; wider screens: an oval
+    const round = w < 680;
+    const rx = round ? Math.min(w, h) / 2 - size * 0.55 : w / 2 - size * 0.6;
+    const ry = round ? rx : h / 2 - size * 0.6;
     // Slow down near the pointer, stop while a card is hovered
     base += SPEED * dt * (hoverCard ? 0 : pointer ? 0.35 : 1);
 
