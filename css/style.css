@@ -1710,3 +1710,18 @@ html.splash-lock, html.splash-lock body { overflow: hidden; }
 @keyframes bh-swipe { 0%, 100% { transform: translateX(4px) rotate(-10deg); } 50% { transform: translateX(-4px) rotate(-10deg); } }
 @keyframes bh-nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
 @media (prefers-reduced-motion: reduce) { .bh-hand, .bh-arrow { animation: none; } }
+
+/* ================= FLAT TEXT HEADLINE ================= */
+.intro-title.ft-ready { perspective: 700px; }
+.ft-word { display: inline-block; white-space: nowrap; transform-style: preserve-3d; }
+.ft-char {
+  display: inline-block;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: color 0.3s;
+}
+.intro-title.ft-ready span { background: none; color: inherit; }
+.intro-title.ft-ready .ft-char.ft-hl {
+  color: var(--violet-dark);
+  background: linear-gradient(transparent 65%, var(--pink) 65%);
+}
