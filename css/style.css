@@ -641,14 +641,15 @@ ul { list-style: none; margin: 0; padding: 0; }
 .video-wrap {
   position: relative;
   width: 100%;
-  max-width: 480px;
-  padding-top: 27%;
+  max-width: 720px;
+  aspect-ratio: 16 / 9;
   border-radius: 10px;
   overflow: hidden;
   background: var(--violet-dark);
 }
 
-.video-wrap iframe {
+.video-wrap iframe,
+.video-wrap video {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -768,7 +769,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   .timeline li { grid-template-columns: 1fr; gap: 6px; }
   .award-list li { grid-template-columns: 1fr; gap: 6px; text-align: left; }
   .award-org { justify-self: start; }
-  .video-wrap { max-width: 100%; padding-top: 56.25%; }
+  .video-wrap { max-width: 100%; }
   .footer-inner { flex-direction: column; text-align: center; }
 }
 
@@ -1128,3 +1129,13 @@ ul { list-style: none; margin: 0; padding: 0; }
   .overview-grid, .award-cards, .spice { grid-template-columns: 1fr; }
   .stat-row-3 { grid-template-columns: 1fr; }
 }
+
+/* Vertical (reels) video */
+.video-wrap.video-vertical {
+  max-width: 340px;
+  aspect-ratio: auto;
+  height: 620px;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+.exp-video .caption a { color: var(--violet-dark); font-weight: 700; }
