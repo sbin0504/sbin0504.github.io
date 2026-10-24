@@ -37,3 +37,28 @@ filterBtns.forEach((btn) => {
     });
   });
 });
+
+// Side timeline: drawer toggle on narrow screens + highlight the project in view
+const side = document.getElementById('side-nav');
+const sideToggle = document.getElementById('sn-toggle');
+if (side && sideToggle) {
+  const setOpen = (open) => {
+    side.classList.toggle('open', open);
+    sideToggle.setAttribute('aria-expanded', String(open));
+    sideToggle.textContent = open ? '닫기' : '타임라인';
+  };
+  sideToggle.addEventListener('click', () => setOpen(!side.classList.contains('open')));
+  side.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+
+  const links = [...side.querySelectorAll('a[data-target]')];
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      links.forEach((l) => l.classList.toggle('current', l.dataset.target === e.target.id));
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  new Set(links.map((l) => l.dataset.target)).forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) spy.observe(el);
+  });
+}
