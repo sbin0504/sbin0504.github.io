@@ -1688,3 +1688,25 @@ html.splash-lock, html.splash-lock body { overflow: hidden; }
   }
 }
 .motto-hl { background: linear-gradient(transparent 60%, var(--white) 60%); color: var(--violet-dark); padding: 0 2px; }
+
+/* Swipe hint: pill badge with a nudging arrow */
+@media (max-width: 680px) {
+  .bento-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: -12px 0 14px;
+    padding: 9px 16px;
+    border-radius: 999px;
+    background: var(--violet-dark);
+    color: var(--white);
+    font-size: 0.92rem;
+    font-weight: 700;
+    box-shadow: 0 6px 16px rgba(95, 93, 120, 0.25);
+  }
+  .bh-hand { font-size: 1.05rem; display: inline-block; animation: bh-swipe 1.6s ease-in-out infinite; }
+  .bh-arrow { color: var(--pink); font-size: 1.1rem; display: inline-block; animation: bh-nudge 1.2s ease-in-out infinite; }
+}
+@keyframes bh-swipe { 0%, 100% { transform: translateX(4px) rotate(-10deg); } 50% { transform: translateX(-4px) rotate(-10deg); } }
+@keyframes bh-nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+@media (prefers-reduced-motion: reduce) { .bh-hand, .bh-arrow { animation: none; } }
