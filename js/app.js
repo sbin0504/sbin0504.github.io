@@ -32,7 +32,7 @@ filterBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
     const f = btn.dataset.filter;
     filterBtns.forEach((b) => b.classList.toggle('active', b === btn));
-    document.querySelectorAll('.ov-card, .proj, #sheffield').forEach((el) => {
+    document.querySelectorAll('.ov-card, .proj, .proj-mini').forEach((el) => {
       el.hidden = f !== 'all' && el.dataset.cat !== f;
     });
   });
