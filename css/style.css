@@ -1725,3 +1725,13 @@ html.splash-lock, html.splash-lock body { overflow: hidden; }
   color: var(--violet-dark);
   background: linear-gradient(transparent 65%, var(--pink) 65%);
 }
+
+/* ================= MASK TEXT REVEAL HEADLINE ================= */
+.intro-title.mr-ready .mr-line {
+  display: block;
+  width: fit-content;
+  clip-path: inset(0 50% 0 50%);
+  transition: clip-path 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.intro-title.mr-ready.mr-in .mr-line { clip-path: inset(0 0 0 0); }
+.intro-title .mr-line { background: none; color: inherit; }
