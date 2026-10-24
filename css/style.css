@@ -1785,3 +1785,4 @@ html.splash-lock, html.splash-lock body { overflow: hidden; }
   font-size: 0.78rem; font-weight: 700; color: var(--white);
   background: rgba(44, 42, 53, 0.7); padding: 6px 12px; border-radius: 999px;
 }
+.proj-mini .proj-figure { margin: 4px 0 14px; }
