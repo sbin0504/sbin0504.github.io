@@ -21,7 +21,8 @@ const reveal = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.12 }
+  // threshold 0: tall sections (project details) can never be 12% on screen at once
+  { threshold: 0, rootMargin: '0px 0px -8% 0px' }
 );
 revealEls.forEach((el) => reveal.observe(el));
 
