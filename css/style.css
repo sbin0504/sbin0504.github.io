@@ -1675,3 +1675,4 @@ html.splash-lock, html.splash-lock body { overflow: hidden; }
     color: var(--violet);
   }
 }
+.motto-hl { background: linear-gradient(transparent 60%, var(--white) 60%); color: var(--violet-dark); padding: 0 2px; }
