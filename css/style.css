@@ -1198,3 +1198,90 @@ ul { list-style: none; margin: 0; padding: 0; }
 .sub-head { margin: 40px 0 16px; font-size: 1.05rem; font-weight: 500; color: var(--ink); }
 .proj, #sheffield { scroll-margin-top: 24px; }
 #awards .stat-row-3 { margin-bottom: 8px; }
+
+/* ================= PROJECT ORBIT ================= */
+.orbit {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 14px;
+}
+
+.orbit-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  width: 170px;
+  height: 170px;
+  padding: 14px;
+  border-radius: 18px;
+  text-decoration: none;
+  color: var(--ink);
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(95, 93, 120, 0.18);
+  background-size: cover;
+  background-position: center;
+}
+.orbit-card.t1 { background: linear-gradient(150deg, #ffffff 0%, var(--pink-light) 100%); }
+.orbit-card.t2 { background: linear-gradient(150deg, var(--pink-light) 0%, var(--pink) 100%); }
+.orbit-card.t3 { background: linear-gradient(150deg, var(--violet) 0%, var(--violet-dark) 100%); color: var(--white); }
+.orbit-card.t4 { background: linear-gradient(150deg, var(--violet-dark) 0%, #3f3d52 100%); color: var(--white); }
+.orbit-card.t5 { background: linear-gradient(150deg, #ffffff 0%, #e9e8f1 100%); }
+.orbit-card.t6 { background: linear-gradient(150deg, #FFE9DC 0%, #FFC9B5 100%); }
+.orbit-card.has-img {
+  background-color: var(--violet-dark);
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+}
+
+.oc-emoji { position: absolute; top: 12px; right: 14px; font-size: 1.9rem; line-height: 1; }
+.has-img .oc-emoji { display: none; }
+.oc-meta { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.oc-date { font-size: 0.68rem; font-weight: 700; opacity: 0.75; }
+.oc-title { font-family: var(--font-title); font-weight: 500; font-size: 0.9rem; line-height: 1.35; word-break: keep-all; }
+.oc-result { font-size: 0.72rem; font-weight: 700; opacity: 0.85; }
+.orbit-card .cat { font-size: 0.62rem; padding: 2px 7px; }
+
+.orbit-center { display: none; }
+
+/* JS-driven ring */
+.orbit.orbit-ready {
+  display: block;
+  position: relative;
+  height: 640px;
+  border-radius: 28px;
+  background: radial-gradient(ellipse at center, var(--white) 0%, var(--offwhite) 70%);
+  overflow: hidden;
+}
+.orbit-ready .orbit-card {
+  position: absolute;
+  left: 0;
+  top: 0;
+  will-change: transform;
+  transition: box-shadow 0.2s;
+}
+.orbit-ready .orbit-card:hover,
+.orbit-ready .orbit-card:focus-visible { box-shadow: 0 18px 40px rgba(95, 93, 120, 0.35); outline: none; }
+.orbit-ready .orbit-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+}
+.orbit-center strong { font-family: var(--font-title); font-size: 3.4rem; line-height: 1; color: var(--violet-dark); }
+.orbit-center span { font-family: var(--font-title); font-size: 1rem; color: var(--violet); margin: 4px 0 10px; letter-spacing: 0.08em; }
+.orbit-center small { font-size: 0.75rem; color: var(--violet); line-height: 1.5; }
+
+@media (max-width: 680px) {
+  .orbit { grid-template-columns: repeat(2, 1fr); }
+  .orbit-card { width: 100%; height: 150px; }
+  .orbit.orbit-ready { height: 440px; }
+  .oc-title { font-size: 0.82rem; }
+}
