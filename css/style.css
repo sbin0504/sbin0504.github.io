@@ -1774,3 +1774,14 @@ html.splash-lock, html.splash-lock body { overflow: hidden; }
 .proj-figure { margin: 0 0 22px; max-width: 720px; }
 .proj-figure img { width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 28px rgba(95, 93, 120, 0.18); }
 .proj-figure figcaption { margin-top: 8px; font-size: 0.78rem; color: var(--violet); }
+
+/* 노노트: reel thumbnail beside the embed */
+.reel-row { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; margin-top: 20px; }
+.reel-row .exp-video { margin-top: 0; }
+.reel-thumb { position: relative; display: block; width: 340px; max-width: 100%; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 28px rgba(95, 93, 120, 0.18); }
+.reel-thumb img { width: 100%; height: auto; display: block; }
+.reel-thumb span {
+  position: absolute; left: 12px; bottom: 12px;
+  font-size: 0.78rem; font-weight: 700; color: var(--white);
+  background: rgba(44, 42, 53, 0.7); padding: 6px 12px; border-radius: 999px;
+}
