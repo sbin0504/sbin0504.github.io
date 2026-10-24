@@ -1787,3 +1787,32 @@ html.splash-lock, html.splash-lock body { overflow: hidden; }
 }
 .proj-mini .proj-figure { margin: 4px 0 14px; }
 .proj-figure-sm { max-width: 300px; }
+
+/* Slide deck viewer */
+.deck { margin-top: 28px; padding-top: 20px; border-top: 1px dashed var(--line); outline: none; }
+.deck .proj-more-title { margin-bottom: 14px; }
+.deck-stage {
+  position: relative;
+  max-width: 820px;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--offwhite);
+  box-shadow: 0 10px 28px rgba(95, 93, 120, 0.18);
+}
+.deck-stage img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.deck-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%; border: none;
+  background: rgba(44, 42, 53, 0.65); color: var(--white);
+  font-size: 1.6rem; line-height: 1; cursor: pointer;
+}
+.deck-btn:hover { background: var(--violet-dark); }
+.deck-prev { left: 10px; }
+.deck-next { right: 10px; }
+.deck-bar { display: flex; align-items: center; gap: 12px; max-width: 820px; margin-top: 10px; }
+.deck-count { font-size: 0.85rem; color: var(--violet); }
+.deck-count b { color: var(--violet-dark); }
+.deck-title { font-size: 0.85rem; font-weight: 700; color: var(--violet-dark); }
+@media (max-width: 680px) { .deck-btn { width: 36px; height: 36px; font-size: 1.3rem; } }
+.deck .caption { margin: 6px 0 0; font-size: 0.75rem; color: var(--violet); }

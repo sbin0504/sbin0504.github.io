@@ -98,3 +98,33 @@ if (splash && splash.classList.contains('show')) {
     if (link) setTimeout(() => document.querySelector(link.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' }), 950);
   });
 }
+
+// Slide deck viewer: buttons, arrow keys and swipe
+document.querySelectorAll('[data-deck]').forEach((deck) => {
+  const slides = [...deck.querySelectorAll('.deck-stage img')];
+  const count = deck.querySelector('.deck-count b');
+  const title = deck.querySelector('.deck-title');
+  let i = 0;
+  const show = (n) => {
+    i = (n + slides.length) % slides.length;
+    slides.forEach((s, k) => { s.hidden = k !== i; });
+    count.textContent = i + 1;
+    title.textContent = slides[i].dataset.title;
+  };
+  deck.querySelector('.deck-prev').addEventListener('click', () => show(i - 1));
+  deck.querySelector('.deck-next').addEventListener('click', () => show(i + 1));
+  deck.tabIndex = 0;
+  deck.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') show(i - 1);
+    if (e.key === 'ArrowRight') show(i + 1);
+  });
+  let x0 = null;
+  const stage = deck.querySelector('.deck-stage');
+  stage.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+  stage.addEventListener('touchend', (e) => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) show(dx < 0 ? i + 1 : i - 1);
+    x0 = null;
+  });
+});
