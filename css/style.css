@@ -1145,3 +1145,50 @@ ul { list-style: none; margin: 0; padding: 0; }
 .video-grid .exp-video { margin-top: 0; }
 .video-grid .caption b { color: var(--violet-dark); }
 @media (max-width: 680px) { .video-grid { grid-template-columns: 1fr; } }
+
+/* ================= HERO BALL PIT ================= */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.ball-pit {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 480px;
+  justify-self: end;
+  border-radius: 28px;
+  background: radial-gradient(circle at 50% 45%, var(--white) 0%, var(--pink-light) 70%, var(--pink) 130%);
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.ball-pit canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.pit-hint {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  margin: 0;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--violet);
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .intro-grid { grid-template-columns: 1fr; }
+  .ball-pit { justify-self: center; max-width: 420px; }
+}
+.intro-title, .intro-desc { word-break: keep-all; }
