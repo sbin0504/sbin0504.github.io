@@ -1139,3 +1139,9 @@ ul { list-style: none; margin: 0; padding: 0; }
   border: 1px solid var(--line);
 }
 .exp-video .caption a { color: var(--violet-dark); font-weight: 700; }
+
+/* Home video grid */
+.video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.video-grid .exp-video { margin-top: 0; }
+.video-grid .caption b { color: var(--violet-dark); }
+@media (max-width: 680px) { .video-grid { grid-template-columns: 1fr; } }
