@@ -18,7 +18,7 @@ const COLORS = [
 ];
 
 const NARROW = window.innerWidth < 700;
-const COUNT = NARROW ? 30 : 56;
+const COUNT = NARROW ? 22 : 44;
 const RADIUS = 1.75;
 const ATTRACTION = 0.006;
 const DRIFT = 0.004; // idle sway so the cluster keeps breathing
@@ -114,8 +114,11 @@ function init() {
     mesh.scale.setScalar(r);
     // Slight tilt so labels face the viewer but don't look flat
     mesh.rotation.set((Math.random() - 0.5) * 0.5, (Math.random() - 0.5) * 0.6, (Math.random() - 0.5) * 0.4);
-    const a = Math.random() * Math.PI * 2;
-    const d = 14 + Math.random() * 8;
+    // Fly in from the side away from the intro text: right on wide screens, below on phones
+    const a = NARROW
+      ? -Math.PI / 2 + (Math.random() - 0.5) * Math.PI * 0.8
+      : (Math.random() - 0.5) * Math.PI * 0.9;
+    const d = 26 + Math.random() * 10;
     bodies.push({
       mesh,
       r,
@@ -127,13 +130,19 @@ function init() {
   }
 
   let spreadX = 1;
+  const centre = new THREE.Vector3();
   const resize = () => {
     const w = host.clientWidth, h = host.clientHeight;
     if (!w || !h) return;
     camera.aspect = w / h;
     // Pull back on portrait screens so the cluster still fits the width
     camera.position.z = Math.max(30, 22 / (0.828 * camera.aspect));
-    spreadX = camera.aspect > 1.2 ? Math.min(1.9, camera.aspect * 0.9) : 1;
+    // The intro text sits on the left (wide) or top (narrow), so park the cluster beside / below it
+    const viewH = 0.828 * camera.position.z;
+    const viewW = viewH * camera.aspect;
+    const wide = camera.aspect > 1.1;
+    centre.set(wide ? viewW * 0.24 : 0, wide ? 0 : -viewH * 0.24, 0);
+    spreadX = wide ? 1.15 : 1;
     camera.updateProjectionMatrix();
     renderer.setSize(w, h, false);
   };
@@ -158,7 +167,7 @@ function init() {
   const rel = new THREE.Vector3();
   const step = () => {
     for (const b of bodies) {
-      tmp.copy(b.pos).negate();
+      tmp.copy(centre).sub(b.pos);
       tmp.x /= spreadX; // wide screens: an oval cloud instead of a ball
       b.vel.addScaledVector(tmp, ATTRACTION);
       b.vel.x += Math.sin(t * 0.7 + b.wobble) * DRIFT;

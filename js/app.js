@@ -89,5 +89,12 @@ if (splash && splash.classList.contains('show')) {
   window.addEventListener('keydown', (e) => {
     if ([' ', 'Enter', 'ArrowDown', 'PageDown'].includes(e.key)) { e.preventDefault(); close(); }
   });
-  splash.addEventListener('click', close);
+  splash.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (link && link.getAttribute('href').startsWith('mailto:')) return; // let the mail app open
+    e.preventDefault();
+    close();
+    // "프로젝트 보러가기": jump there once the intro has slid away
+    if (link) setTimeout(() => document.querySelector(link.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' }), 950);
+  });
 }

@@ -1,4 +1,4 @@
-// Hero headline: each line is unmasked from the centre outwards (ease-in-out), once the intro is gone
+// Intro headline: each line is unmasked from the centre outwards (ease-in-out)
 (() => {
   const title = document.querySelector('.intro-title');
   if (!title || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -24,10 +24,5 @@
       obs.disconnect();
     }, { threshold: 0.3 }).observe(title);
   };
-  const splash = document.getElementById('splash');
-  if (splash && splash.classList.contains('show')) {
-    document.addEventListener('splash:closed', reveal, { once: true });
-  } else {
-    reveal();
-  }
+  reveal();
 })();
