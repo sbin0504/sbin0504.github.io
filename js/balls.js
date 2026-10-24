@@ -68,6 +68,11 @@ function init() {
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  // Size the pit and canvas here too, so a stale/missing stylesheet can't make them grow unbounded
+  Object.assign(host.style, { position: 'relative', aspectRatio: '1 / 1', overflow: 'hidden', width: '100%', maxWidth: '480px' });
+  Object.assign(renderer.domElement.style, {
+    position: 'absolute', inset: '0', width: '100%', height: '100%', display: 'block',
+  });
   host.prepend(renderer.domElement);
 
   const scene = new THREE.Scene();
