@@ -1618,3 +1618,60 @@ html.splash-lock, html.splash-lock body { overflow: hidden; }
 @media (max-width: 680px) {
   .splash-enter { left: 20px; right: 20px; transform: none; }
 }
+
+/* 세부모듈 */
+.module-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.module-tags span {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--pink-light);
+  color: var(--violet-dark);
+}
+.sn-modules { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.sn-modules i {
+  font-style: normal;
+  font-size: 0.66rem;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: var(--pink-light);
+  color: var(--violet-dark);
+}
+
+.bento-hint { display: none; }
+
+/* Phones: competency cards become a compact horizontal carousel */
+@media (max-width: 680px) {
+  .bento {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 24px;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -24px 32px;
+    padding: 4px 24px 12px;
+    scrollbar-width: none;
+  }
+  .bento::-webkit-scrollbar { display: none; }
+  .bento-item,
+  .bento-item.large {
+    flex: 0 0 58%;
+    min-height: 0;
+    padding: 16px;
+    scroll-snap-align: start;
+  }
+  .bento-item:hover { transform: none; }
+  .bento-icon { font-size: 1.2rem; margin-bottom: 6px; }
+  .bento-item h4 { font-size: 0.9rem; }
+  .bento-item p { font-size: 0.76rem; }
+  .bento-hint {
+    display: block;
+    margin: -8px 0 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--violet);
+  }
+}
