@@ -1826,3 +1826,4 @@ html.splash-lock, html.splash-lock body { overflow: hidden; }
   padding: 8px 4px;
 }
 .splash-enter:hover { background: none; color: var(--violet); }
+.splash-content .kicker { letter-spacing: -0.02em; word-spacing: -0.08em; }
