@@ -1827,3 +1827,4 @@ html.splash-lock, html.splash-lock body { overflow: hidden; }
 }
 .splash-enter:hover { background: none; color: var(--violet); }
 .splash-content .kicker { letter-spacing: -0.02em; word-spacing: -0.08em; }
+#campusnaeil .kpi strong { font-size: 1.2rem; word-break: break-all; }
