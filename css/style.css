@@ -1816,3 +1816,13 @@ html.splash-lock, html.splash-lock body { overflow: hidden; }
 .deck-title { font-size: 0.85rem; font-weight: 700; color: var(--violet-dark); }
 @media (max-width: 680px) { .deck-btn { width: 36px; height: 36px; font-size: 1.3rem; } }
 .deck .caption { margin: 6px 0 0; font-size: 0.75rem; color: var(--violet); }
+
+/* Enter hint: no pill, just icon + text */
+.splash-enter {
+  background: none;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  padding: 8px 4px;
+}
+.splash-enter:hover { background: none; color: var(--violet); }
