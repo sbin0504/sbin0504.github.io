@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://sbin0504.github.io/assets/og-intro.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌷</text></svg>">
-<link rel="stylesheet" href="css/style.css?v=40">
+<link rel="stylesheet" href="css/style.css?v=43">
 </head>
 <body>
 <div id="splash" class="splash" aria-label="인트로 화면">
@@ -190,7 +190,7 @@
       <span class="idx">02</span>
       <h3>프로젝트 &amp; 활동</h3>
     </div>
-    <p class="section-lede">공모전·서포터즈·교내활동에서 기획부터 실행, 콘텐츠 제작까지 직접 진행한 경험입니다.<br>카드를 누르면 상세 내용으로 이동합니다.</p>
+    <p class="section-lede">공모전·서포터즈·교내활동에서 기획부터 실행, 콘텐츠 제작까지 직접 진행한 경험입니다.<br>카드를 누르면 상세 내용으로 이동하고, 마우스를 올리면 멈춥니다.</p>
     <div class="filter-bar" role="group" aria-label="활동 분류 필터">
       <button class="filter-btn active" data-filter="all">전체 <b>12</b></button>
       <button class="filter-btn" data-filter="contest">공모전 <b>6</b></button>
@@ -199,8 +199,9 @@
       <button class="filter-btn" data-filter="campus">교내활동 <b>2</b></button>
     </div>
 
-    <div class="orbit" id="orbit">
-      <div class="orbit-center" aria-hidden="true"><strong>12</strong><span>Projects</span><small>카드에 마우스를 올리거나<br>눌러서 자세히 보기</small></div>
+    <div class="marquee" id="marquee">
+      <div class="mq-row mq-left">
+        <div class="mq-track">
       <a href="#nonote" class="ov-card orbit-card t1 has-img" data-cat="contest" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 25%, rgba(44,42,53,0.85) 100%), url('assets/nonote-reel.jpg'); background-position: center 30%">
         <span class="oc-emoji" aria-hidden="true">🧴</span>
         <span class="oc-meta"><span class="cat cat-contest">공모전</span><span class="oc-date">2026</span></span>
@@ -237,6 +238,118 @@
         <b class="oc-title">경기도미래세대재단 SNS 서포터즈</b>
         <span class="oc-result">현장 취재 · 정책 홍보 영상</span>
       </a>
+      <a aria-hidden="true" tabindex="-1" href="#nonote" class="ov-card orbit-card t1 has-img" data-cat="contest" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 25%, rgba(44,42,53,0.85) 100%), url('assets/nonote-reel.jpg'); background-position: center 30%">
+        <span class="oc-emoji" aria-hidden="true">🧴</span>
+        <span class="oc-meta"><span class="cat cat-contest">공모전</span><span class="oc-date">2026</span></span>
+        <b class="oc-title">노노트 선크림 숏폼 영상</b>
+        <span class="oc-result">인스타그램 릴스 제작</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#beside" class="ov-card orbit-card t4 has-img" data-cat="contest" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 25%, rgba(44,42,53,0.85) 100%), url('assets/beside-ad-poster.jpg')">
+        <span class="oc-emoji" aria-hidden="true">🤖</span>
+        <span class="oc-meta"><span class="cat cat-contest">공모전</span><span class="oc-date">2026</span></span>
+        <b class="oc-title">정부광고 · &lt;엄마가 수상하다&gt;</b>
+        <span class="oc-result">생성형 AI 광고 영상</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#campusnaeil" class="ov-card orbit-card t5 has-img" data-cat="campus" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 30%, rgba(44,42,53,0.85) 100%), url('assets/campus-naeil.jpg'); background-position: center 70%">
+        <span class="oc-emoji" aria-hidden="true">📖</span>
+        <span class="oc-meta"><span class="cat cat-campus">캡스톤</span><span class="oc-date">2026-1</span></span>
+        <b class="oc-title">Capstone · CAMPUS NAEIL</b>
+        <span class="oc-result">영문 인스타툰 · 장학금 100만 원</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#byoi" class="ov-card orbit-card t3 has-img" data-cat="contest" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 30%, rgba(44,42,53,0.85) 100%), url('assets/byoi-card.jpg'); background-position: center top">
+        <span class="oc-emoji" aria-hidden="true">🏆</span>
+        <span class="oc-meta"><span class="cat cat-contest">교내 공모전</span><span class="oc-date">2026</span></span>
+        <b class="oc-title">BYOI · 용인 와이페이 홍보</b>
+        <span class="oc-result">팀장 · 최우수상</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#smartstore" class="ov-card orbit-card t2 has-img" data-cat="contest" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 25%, rgba(44,42,53,0.85) 100%), url('https://i.ytimg.com/vi/8pJIIQa_4Zo/hqdefault.jpg')">
+        <span class="oc-emoji" aria-hidden="true">🛒</span>
+        <span class="oc-meta"><span class="cat cat-contest">교내 공모전</span><span class="oc-date">2025</span></span>
+        <b class="oc-title">네이버 스마트스토어 운영</b>
+        <span class="oc-result">매출 550만원 · 은상</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#gyeonggi" class="ov-card orbit-card t5 has-img" data-cat="supporters" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 30%, rgba(44,42,53,0.85) 100%), url('assets/gyeonggi.jpg'); background-position: center 35%">
+        <span class="oc-emoji" aria-hidden="true">📱</span>
+        <span class="oc-meta"><span class="cat cat-supporters">서포터즈</span><span class="oc-date">2025.08–11</span></span>
+        <b class="oc-title">경기도미래세대재단 SNS 서포터즈</b>
+        <span class="oc-result">현장 취재 · 정책 홍보 영상</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#nonote" class="ov-card orbit-card t1 has-img" data-cat="contest" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 25%, rgba(44,42,53,0.85) 100%), url('assets/nonote-reel.jpg'); background-position: center 30%">
+        <span class="oc-emoji" aria-hidden="true">🧴</span>
+        <span class="oc-meta"><span class="cat cat-contest">공모전</span><span class="oc-date">2026</span></span>
+        <b class="oc-title">노노트 선크림 숏폼 영상</b>
+        <span class="oc-result">인스타그램 릴스 제작</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#beside" class="ov-card orbit-card t4 has-img" data-cat="contest" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 25%, rgba(44,42,53,0.85) 100%), url('assets/beside-ad-poster.jpg')">
+        <span class="oc-emoji" aria-hidden="true">🤖</span>
+        <span class="oc-meta"><span class="cat cat-contest">공모전</span><span class="oc-date">2026</span></span>
+        <b class="oc-title">정부광고 · &lt;엄마가 수상하다&gt;</b>
+        <span class="oc-result">생성형 AI 광고 영상</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#campusnaeil" class="ov-card orbit-card t5 has-img" data-cat="campus" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 30%, rgba(44,42,53,0.85) 100%), url('assets/campus-naeil.jpg'); background-position: center 70%">
+        <span class="oc-emoji" aria-hidden="true">📖</span>
+        <span class="oc-meta"><span class="cat cat-campus">캡스톤</span><span class="oc-date">2026-1</span></span>
+        <b class="oc-title">Capstone · CAMPUS NAEIL</b>
+        <span class="oc-result">영문 인스타툰 · 장학금 100만 원</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#byoi" class="ov-card orbit-card t3 has-img" data-cat="contest" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 30%, rgba(44,42,53,0.85) 100%), url('assets/byoi-card.jpg'); background-position: center top">
+        <span class="oc-emoji" aria-hidden="true">🏆</span>
+        <span class="oc-meta"><span class="cat cat-contest">교내 공모전</span><span class="oc-date">2026</span></span>
+        <b class="oc-title">BYOI · 용인 와이페이 홍보</b>
+        <span class="oc-result">팀장 · 최우수상</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#smartstore" class="ov-card orbit-card t2 has-img" data-cat="contest" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 25%, rgba(44,42,53,0.85) 100%), url('https://i.ytimg.com/vi/8pJIIQa_4Zo/hqdefault.jpg')">
+        <span class="oc-emoji" aria-hidden="true">🛒</span>
+        <span class="oc-meta"><span class="cat cat-contest">교내 공모전</span><span class="oc-date">2025</span></span>
+        <b class="oc-title">네이버 스마트스토어 운영</b>
+        <span class="oc-result">매출 550만원 · 은상</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#gyeonggi" class="ov-card orbit-card t5 has-img" data-cat="supporters" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 30%, rgba(44,42,53,0.85) 100%), url('assets/gyeonggi.jpg'); background-position: center 35%">
+        <span class="oc-emoji" aria-hidden="true">📱</span>
+        <span class="oc-meta"><span class="cat cat-supporters">서포터즈</span><span class="oc-date">2025.08–11</span></span>
+        <b class="oc-title">경기도미래세대재단 SNS 서포터즈</b>
+        <span class="oc-result">현장 취재 · 정책 홍보 영상</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#nonote" class="ov-card orbit-card t1 has-img" data-cat="contest" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 25%, rgba(44,42,53,0.85) 100%), url('assets/nonote-reel.jpg'); background-position: center 30%">
+        <span class="oc-emoji" aria-hidden="true">🧴</span>
+        <span class="oc-meta"><span class="cat cat-contest">공모전</span><span class="oc-date">2026</span></span>
+        <b class="oc-title">노노트 선크림 숏폼 영상</b>
+        <span class="oc-result">인스타그램 릴스 제작</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#beside" class="ov-card orbit-card t4 has-img" data-cat="contest" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 25%, rgba(44,42,53,0.85) 100%), url('assets/beside-ad-poster.jpg')">
+        <span class="oc-emoji" aria-hidden="true">🤖</span>
+        <span class="oc-meta"><span class="cat cat-contest">공모전</span><span class="oc-date">2026</span></span>
+        <b class="oc-title">정부광고 · &lt;엄마가 수상하다&gt;</b>
+        <span class="oc-result">생성형 AI 광고 영상</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#campusnaeil" class="ov-card orbit-card t5 has-img" data-cat="campus" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 30%, rgba(44,42,53,0.85) 100%), url('assets/campus-naeil.jpg'); background-position: center 70%">
+        <span class="oc-emoji" aria-hidden="true">📖</span>
+        <span class="oc-meta"><span class="cat cat-campus">캡스톤</span><span class="oc-date">2026-1</span></span>
+        <b class="oc-title">Capstone · CAMPUS NAEIL</b>
+        <span class="oc-result">영문 인스타툰 · 장학금 100만 원</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#byoi" class="ov-card orbit-card t3 has-img" data-cat="contest" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 30%, rgba(44,42,53,0.85) 100%), url('assets/byoi-card.jpg'); background-position: center top">
+        <span class="oc-emoji" aria-hidden="true">🏆</span>
+        <span class="oc-meta"><span class="cat cat-contest">교내 공모전</span><span class="oc-date">2026</span></span>
+        <b class="oc-title">BYOI · 용인 와이페이 홍보</b>
+        <span class="oc-result">팀장 · 최우수상</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#smartstore" class="ov-card orbit-card t2 has-img" data-cat="contest" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 25%, rgba(44,42,53,0.85) 100%), url('https://i.ytimg.com/vi/8pJIIQa_4Zo/hqdefault.jpg')">
+        <span class="oc-emoji" aria-hidden="true">🛒</span>
+        <span class="oc-meta"><span class="cat cat-contest">교내 공모전</span><span class="oc-date">2025</span></span>
+        <b class="oc-title">네이버 스마트스토어 운영</b>
+        <span class="oc-result">매출 550만원 · 은상</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#gyeonggi" class="ov-card orbit-card t5 has-img" data-cat="supporters" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 30%, rgba(44,42,53,0.85) 100%), url('assets/gyeonggi.jpg'); background-position: center 35%">
+        <span class="oc-emoji" aria-hidden="true">📱</span>
+        <span class="oc-meta"><span class="cat cat-supporters">서포터즈</span><span class="oc-date">2025.08–11</span></span>
+        <b class="oc-title">경기도미래세대재단 SNS 서포터즈</b>
+        <span class="oc-result">현장 취재 · 정책 홍보 영상</span>
+      </a>
+        </div>
+      </div>
+      <div class="mq-row mq-right">
+        <div class="mq-track">
       <a href="#nongshim" class="ov-card orbit-card t6 has-img" data-cat="contest" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 25%, rgba(44,42,53,0.85) 100%), url('assets/nongshim-triple-shin.jpg'); background-position: 72% center">
         <span class="oc-emoji" aria-hidden="true">🌶️</span>
         <span class="oc-meta"><span class="cat cat-contest">공모전</span><span class="oc-date">2025.09</span></span>
@@ -273,6 +386,116 @@
         <b class="oc-title">2024 여름방학 HUFStudy</b>
         <span class="oc-result">우수상 수상</span>
       </a>
+      <a aria-hidden="true" tabindex="-1" href="#nongshim" class="ov-card orbit-card t6 has-img" data-cat="contest" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 25%, rgba(44,42,53,0.85) 100%), url('assets/nongshim-triple-shin.jpg'); background-position: 72% center">
+        <span class="oc-emoji" aria-hidden="true">🌶️</span>
+        <span class="oc-meta"><span class="cat cat-contest">공모전</span><span class="oc-date">2025.09</span></span>
+        <b class="oc-title">농심 마케팅 · Triple Shin</b>
+        <span class="oc-result">신제품 + 바이럴 전략</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#dhlottery" class="ov-card orbit-card t1 has-img" data-cat="supporters" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 30%, rgba(44,42,53,0.85) 100%), url('assets/dhlottery.jpg'); background-position: center 25%">
+        <span class="oc-emoji" aria-hidden="true">📢</span>
+        <span class="oc-meta"><span class="cat cat-supporters">서포터즈</span><span class="oc-date">2025.05–08</span></span>
+        <b class="oc-title">동행복권 서포터즈 행복지음 5기</b>
+        <span class="oc-result">캠페인 · 블로그 · 다큐</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#sheffield" class="ov-card orbit-card t3 has-img" data-cat="global" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 30%, rgba(44,42,53,0.88) 100%), url('assets/sheffield-card.jpg'); background-position: center top; background-size: cover">
+        <span class="oc-emoji" aria-hidden="true">✈️</span>
+        <span class="oc-meta"><span class="cat cat-global">어학연수</span><span class="oc-date">2025.01–02</span></span>
+        <b class="oc-title">영국 셰필드 대학교 어학연수</b>
+        <span class="oc-result">영어 토론·회화 집중 과정</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#sheffield" class="ov-card orbit-card t2 has-img" data-cat="global" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 25%, rgba(44,42,53,0.85) 100%), url('assets/campus-asia-2024.jpg'); background-position: center 60%">
+        <span class="oc-emoji" aria-hidden="true">🌏</span>
+        <span class="oc-meta"><span class="cat cat-global">교내활동</span><span class="oc-date">2024.08</span></span>
+        <b class="oc-title">CAMPUS Asia 2024</b>
+        <span class="oc-result">중·일·대만 학생 국제교류</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#ccs4" class="ov-card orbit-card t6 has-img" data-cat="contest" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 30%, rgba(44,42,53,0.85) 100%), url('assets/plodica.jpg'); background-position: 8% center">
+        <span class="oc-emoji" aria-hidden="true">🥉</span>
+        <span class="oc-meta"><span class="cat cat-contest">교내 공모전</span><span class="oc-date">2024.12</span></span>
+        <b class="oc-title">제4회 HUFS C.C.S · 플로디카</b>
+        <span class="oc-result">동상 수상</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#hufstudy" class="ov-card orbit-card t5 has-img" data-cat="campus" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 35%, rgba(44,42,53,0.85) 100%), url('assets/hufstudy-card.jpg'); background-position: center top">
+        <span class="oc-emoji" aria-hidden="true">📚</span>
+        <span class="oc-meta"><span class="cat cat-campus">교내활동</span><span class="oc-date">2024.08</span></span>
+        <b class="oc-title">2024 여름방학 HUFStudy</b>
+        <span class="oc-result">우수상 수상</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#nongshim" class="ov-card orbit-card t6 has-img" data-cat="contest" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 25%, rgba(44,42,53,0.85) 100%), url('assets/nongshim-triple-shin.jpg'); background-position: 72% center">
+        <span class="oc-emoji" aria-hidden="true">🌶️</span>
+        <span class="oc-meta"><span class="cat cat-contest">공모전</span><span class="oc-date">2025.09</span></span>
+        <b class="oc-title">농심 마케팅 · Triple Shin</b>
+        <span class="oc-result">신제품 + 바이럴 전략</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#dhlottery" class="ov-card orbit-card t1 has-img" data-cat="supporters" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 30%, rgba(44,42,53,0.85) 100%), url('assets/dhlottery.jpg'); background-position: center 25%">
+        <span class="oc-emoji" aria-hidden="true">📢</span>
+        <span class="oc-meta"><span class="cat cat-supporters">서포터즈</span><span class="oc-date">2025.05–08</span></span>
+        <b class="oc-title">동행복권 서포터즈 행복지음 5기</b>
+        <span class="oc-result">캠페인 · 블로그 · 다큐</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#sheffield" class="ov-card orbit-card t3 has-img" data-cat="global" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 30%, rgba(44,42,53,0.88) 100%), url('assets/sheffield-card.jpg'); background-position: center top; background-size: cover">
+        <span class="oc-emoji" aria-hidden="true">✈️</span>
+        <span class="oc-meta"><span class="cat cat-global">어학연수</span><span class="oc-date">2025.01–02</span></span>
+        <b class="oc-title">영국 셰필드 대학교 어학연수</b>
+        <span class="oc-result">영어 토론·회화 집중 과정</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#sheffield" class="ov-card orbit-card t2 has-img" data-cat="global" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 25%, rgba(44,42,53,0.85) 100%), url('assets/campus-asia-2024.jpg'); background-position: center 60%">
+        <span class="oc-emoji" aria-hidden="true">🌏</span>
+        <span class="oc-meta"><span class="cat cat-global">교내활동</span><span class="oc-date">2024.08</span></span>
+        <b class="oc-title">CAMPUS Asia 2024</b>
+        <span class="oc-result">중·일·대만 학생 국제교류</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#ccs4" class="ov-card orbit-card t6 has-img" data-cat="contest" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 30%, rgba(44,42,53,0.85) 100%), url('assets/plodica.jpg'); background-position: 8% center">
+        <span class="oc-emoji" aria-hidden="true">🥉</span>
+        <span class="oc-meta"><span class="cat cat-contest">교내 공모전</span><span class="oc-date">2024.12</span></span>
+        <b class="oc-title">제4회 HUFS C.C.S · 플로디카</b>
+        <span class="oc-result">동상 수상</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#hufstudy" class="ov-card orbit-card t5 has-img" data-cat="campus" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 35%, rgba(44,42,53,0.85) 100%), url('assets/hufstudy-card.jpg'); background-position: center top">
+        <span class="oc-emoji" aria-hidden="true">📚</span>
+        <span class="oc-meta"><span class="cat cat-campus">교내활동</span><span class="oc-date">2024.08</span></span>
+        <b class="oc-title">2024 여름방학 HUFStudy</b>
+        <span class="oc-result">우수상 수상</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#nongshim" class="ov-card orbit-card t6 has-img" data-cat="contest" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 25%, rgba(44,42,53,0.85) 100%), url('assets/nongshim-triple-shin.jpg'); background-position: 72% center">
+        <span class="oc-emoji" aria-hidden="true">🌶️</span>
+        <span class="oc-meta"><span class="cat cat-contest">공모전</span><span class="oc-date">2025.09</span></span>
+        <b class="oc-title">농심 마케팅 · Triple Shin</b>
+        <span class="oc-result">신제품 + 바이럴 전략</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#dhlottery" class="ov-card orbit-card t1 has-img" data-cat="supporters" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 30%, rgba(44,42,53,0.85) 100%), url('assets/dhlottery.jpg'); background-position: center 25%">
+        <span class="oc-emoji" aria-hidden="true">📢</span>
+        <span class="oc-meta"><span class="cat cat-supporters">서포터즈</span><span class="oc-date">2025.05–08</span></span>
+        <b class="oc-title">동행복권 서포터즈 행복지음 5기</b>
+        <span class="oc-result">캠페인 · 블로그 · 다큐</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#sheffield" class="ov-card orbit-card t3 has-img" data-cat="global" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 30%, rgba(44,42,53,0.88) 100%), url('assets/sheffield-card.jpg'); background-position: center top; background-size: cover">
+        <span class="oc-emoji" aria-hidden="true">✈️</span>
+        <span class="oc-meta"><span class="cat cat-global">어학연수</span><span class="oc-date">2025.01–02</span></span>
+        <b class="oc-title">영국 셰필드 대학교 어학연수</b>
+        <span class="oc-result">영어 토론·회화 집중 과정</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#sheffield" class="ov-card orbit-card t2 has-img" data-cat="global" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 25%, rgba(44,42,53,0.85) 100%), url('assets/campus-asia-2024.jpg'); background-position: center 60%">
+        <span class="oc-emoji" aria-hidden="true">🌏</span>
+        <span class="oc-meta"><span class="cat cat-global">교내활동</span><span class="oc-date">2024.08</span></span>
+        <b class="oc-title">CAMPUS Asia 2024</b>
+        <span class="oc-result">중·일·대만 학생 국제교류</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#ccs4" class="ov-card orbit-card t6 has-img" data-cat="contest" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 30%, rgba(44,42,53,0.85) 100%), url('assets/plodica.jpg'); background-position: 8% center">
+        <span class="oc-emoji" aria-hidden="true">🥉</span>
+        <span class="oc-meta"><span class="cat cat-contest">교내 공모전</span><span class="oc-date">2024.12</span></span>
+        <b class="oc-title">제4회 HUFS C.C.S · 플로디카</b>
+        <span class="oc-result">동상 수상</span>
+      </a>
+      <a aria-hidden="true" tabindex="-1" href="#hufstudy" class="ov-card orbit-card t5 has-img" data-cat="campus" style="background-image:linear-gradient(180deg, rgba(44,42,53,0) 35%, rgba(44,42,53,0.85) 100%), url('assets/hufstudy-card.jpg'); background-position: center top">
+        <span class="oc-emoji" aria-hidden="true">📚</span>
+        <span class="oc-meta"><span class="cat cat-campus">교내활동</span><span class="oc-date">2024.08</span></span>
+        <b class="oc-title">2024 여름방학 HUFStudy</b>
+        <span class="oc-result">우수상 수상</span>
+      </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -967,7 +1190,6 @@
 </footer>
 
 <script src="js/app.js?v=11"></script>
-<script src="js/orbit.js?v=9"></script>
 <script src="js/mask-reveal.js?v=2"></script>
 <script type="module" src="js/balls.js?v=9"></script>
 </body>
